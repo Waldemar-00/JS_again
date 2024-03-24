@@ -1,0 +1,45 @@
+body {
+  background-color: rgb(255, 165, 0.5);
+}
+.bmiForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+.bmiForm input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  color: rgb(109, 109, 109);
+}
+.bmiForm input:focus {
+  box-shadow: 3px 3px 0 0 orangered;
+}
+.bmiForm .btn {
+  align-self: center;
+  width: 40%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #fff;
+  color: gray;
+  transition: all 0.4s;
+}
+.bmiForm .btn:hover {
+  cursor: pointer;
+  background-color: orangered;
+  color: #fff;
+}
+.indexBmi {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  color: orangered;
+  align-self: center;
+  border-radius: 0.5rem;
+  text-align: center;
+}
