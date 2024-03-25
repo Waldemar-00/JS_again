@@ -43,3 +43,6 @@ body {
   border-radius: 0.5rem;
   text-align: center;
 }
+.indexBmi p {
+  padding: 0.5rem;
+}
