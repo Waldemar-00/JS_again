@@ -1,0 +1,18 @@
+export const aphorismsArray = [
+  'Actions speak louder than words',
+  'All for one and one for all',
+  "Don't fire until you see the whites of their eyes",
+  'Early to bed, early to rise, makes a man healthy, wealthy, and wise',
+  'Give a man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime',
+  "Give him an inch and he'll take a mile",
+  "Give him enough rope and he'll hang himself",
+  'He who fights and runs away, lives to fight another day',
+  'He who hesitates is lost',
+  'If you lie down with dogs, you wake up with fleas',
+  'Laugh, and the world laughs with you; weep, and you weep alone',
+  "You can fool some of the people all of the time, and all of the people some of the time, but you can't fool all of the people all of the time",
+  "You can kill a man but you can't kill an idea",
+  "You can take the boy out of the country, but you can't take the country out of the boy",
+  'You made your bed, now lie in it',
+  'You need to take a bull by the horns, and a man by his word',
+]

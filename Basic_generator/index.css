@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  background-color: orangered;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper .aphorism {
+  margin-top: 10vh;
+  min-width: 40%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: rgb(42, 42, 42);
+  text-align: center;
+}
+.wrapper .btn {
+  padding: 0.5rem;
+  background-color: #fff;
+  color: grey;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 5vh;
+}
+.wrapper .btn:hover {
+  cursor: pointer;
+  color: rgb(42, 42, 42);
+}
+.wrapper .paragraph {
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  color: red;
+}
