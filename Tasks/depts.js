@@ -15,10 +15,12 @@ function calcBonus(array1, array2) {
   const percent = Math.round(
     firstSum <= secondSum ? secondSum / (firstSum / 100) - 100 : firstSum / (secondSum / 100) - 100,
   )
-  const message =
-    percent > 30 && firstSum > secondSum
-      ? `First dept will take bonus ${percent}`
-      : `Second dept will take bonus ${percent}`
-  console.log(message)
+  if (percent > 30) {
+    const message =
+      firstSum > secondSum ? `First dept will take bonus ${percent}` : `Second dept will take bonus ${percent}`
+    console.log(message)
+    return message
+  }
+  console.log('Will not any bonus')
 }
 calcBonus(dept1, dept2)
