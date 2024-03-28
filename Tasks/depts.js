@@ -12,7 +12,7 @@ function calcBonus(array1, array2) {
   const firstSum = getSum(array1)
   const secondSum = getSum(array2)
   const percent = Math.round(
-    firstSum < secondSum ? secondSum / (firstSum / 100) - 100 : firstSum / (secondSum / 100) - 100,
+    firstSum <= secondSum ? secondSum / (firstSum / 100) - 100 : firstSum / (secondSum / 100) - 100,
   )
   const message =
     percent > 30 && firstSum > secondSum
