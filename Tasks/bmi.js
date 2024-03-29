@@ -6,7 +6,7 @@ function User([name, weight, height]) {
   this.name = name
   this.weight = weight
   this.height = height
-  this.bmi = function () {
+  this.calcBmi = function () {
     this.userBmi = Math.round(this.weight / this.height ** 2)
     return this.userBmi
   }
@@ -14,12 +14,11 @@ function User([name, weight, height]) {
 }
 const userMikeObj = new User(userMike)
 const userJackObj = new User(userJack)
-userMikeObj.bmi()
-userJackObj.bmi()
-console.log(
-  `${userJackObj.userBmi > userMikeObj.userBmi ? userJackObj.name : userMikeObj.name} BMI is ${
-    userJackObj.userBmi > userMikeObj.userBmi ? userJackObj.userBmi : userMikeObj.userBmi
-  } it's more than ${userJackObj.userBmi > userMikeObj.userBmi ? userMikeObj.name : userJackObj.name} BMI - ${
-    userJackObj.userBmi > userMikeObj.userBmi ? userMikeObj.userBmi : userJackObj.userBmi
-  }!`,
-)
+userMikeObj.calcBmi()
+userJackObj.calcBmi()
+const resultString = `${userJackObj.userBmi > userMikeObj.userBmi ? userJackObj.name : userMikeObj.name} BMI is ${
+  userJackObj.userBmi > userMikeObj.userBmi ? userJackObj.userBmi : userMikeObj.userBmi
+} it's ${userJackObj.userBmi === userMikeObj.userBmi ? 'equal' : 'more than'} ${
+  userJackObj.userBmi > userMikeObj.userBmi ? userMikeObj.name : userJackObj.name
+} BMI - ${userJackObj.userBmi > userMikeObj.userBmi ? userMikeObj.userBmi : userJackObj.userBmi}!`
+console.log(resultString)
