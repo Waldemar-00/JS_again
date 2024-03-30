@@ -22,9 +22,21 @@ class CalcBillsAndTips extends Object {
     this.tips = this.bills.map((bill) => (bill < 20 ? bill * 0.2 : bill * 0.15))
     return this.tips
   }
+  calcAverageValueBiils() {
+    this.AverageBills = Math.round(this.bills.reduce((acc, bill) => acc + bill, 0) / this.bills.length)
+    return this.AverageBills
+  }
+  calcAverageValueTips() {
+    this.AverageTips = Math.round(this.tips.reduce((acc, bill) => acc + bill, 0) / this.tips.length)
+    return this.AverageTips
+  }
 }
 const billsAndTips = new CalcBillsAndTips([11, 20, 47])
 console.log(billsAndTips)
 console.log(billsAndTips.calculateTips())
 console.log(billsAndTips.calcFullBills())
 console.log(billsAndTips.bills, billsAndTips.tips)
+console.log(`-------------------------------`)
+console.log(billsAndTips.calcAverageValueBiils())
+console.log(billsAndTips.calcAverageValueTips())
+console.log(billsAndTips.AverageBills, billsAndTips.AverageTips)
