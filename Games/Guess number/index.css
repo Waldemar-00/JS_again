@@ -16,21 +16,27 @@ header {
 button {
   border: none;
   cursor: pointer;
+  padding: 0.2rem;
 }
 h1 {
   margin: 3rem;
   text-align: center;
 }
-h2 {
-  text-align: center;
-  margin: 7rem auto;
-  border: 2px solid green;
-  width: 11rem;
-  padding: 1.5rem;
-}
+
 .view-result {
   position: relative;
+  top: 0;
+  left: 0;
+}
+h2 {
+  position: relative;
+  top: 0;
   z-index: 10;
+  text-align: center;
+  margin: 7rem auto;
+  border: 3px solid green;
+  width: 11rem;
+  padding: 1.5rem;
 }
 .view-result .line {
   position: relative;
@@ -48,4 +54,29 @@ h2 {
 
 [type='number'] {
   display: block;
+  font-size: 2.5rem;
+  width: 14rem;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border: 3px solid green;
+  outline: none;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  /* opacity: 1;
+  background-color: green; */
+  /* --webkit-appearance: none;
+  --moz-appearance: none; */
+  appearance: none;
+  margin: 0;
+}
+.wrapper h3:first-child {
+  margin: 0;
+}
+.wrapper button {
+  display: block;
+  margin: 1.5rem auto;
+}
+button:hover {
+  box-shadow: 0 3px green;
 }
