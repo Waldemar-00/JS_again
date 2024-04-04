@@ -14,28 +14,27 @@ const gameNumber = randomNum()
 function startNewGame() {
   h2.innerText = '???'
   input.value = ''
-  gameMessage = 'Start guessing!'
-  bestResult.innerText = points.innerText
-  points.innerText = '20'
+  gameMessage.innerText = 'Start guessing!'
+  bestResult.innerText = `Best Result: ${points.innerText.split('').slice(-2).join('')}`
+  points.innerText = 'Points: 20'
   return randomNum()
 }
 function checkNumber() {
-  const numberFromInput = Number(document.querySelector("[type = 'number']").value)
+  const numberFromInput = Number(input.value)
   if (numberFromInput > gameNumber) {
     gameMessage.innerText = 'Too much!'
-    const points = document.querySelector('#points')
     points.innerText = 'Points: ' + (points.innerText.split('').slice(-2).join('') - 1)
   }
   if (numberFromInput < gameNumber) {
     gameMessage.innerText = 'Too few!'
-    const points = document.querySelector('#points')
     points.innerText = 'Points: ' + (points.innerText.split('').slice(-2).join('') - 1)
   }
   if (numberFromInput === gameNumber) {
-    gameMessage.innerText = 'You are right!'
-    const points = document.querySelector('#points')
+    gameMessage.innerText = 'YOU WIN!'
     points.innerText = 'Points: ' + (points.innerText.split('').slice(-2).join('') - 1)
     bestResult.innerText = 'Best Result: ' + points.innerText.split('').slice(-2).join('')
+    h2.classList.add('win')
+    h2.innerText = gameNumber
   }
 }
 atFirst.addEventListener('click', startNewGame)

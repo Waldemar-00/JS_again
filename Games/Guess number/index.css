@@ -37,10 +37,11 @@ h2 {
   border: 3px solid green;
   width: 11rem;
   padding: 1.5rem;
+  font-size: 4rem;
 }
 .view-result .line {
   position: relative;
-  top: -170px;
+  top: -195px;
   left: 0px;
   z-index: 1;
 }
