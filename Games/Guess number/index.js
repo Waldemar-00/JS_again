@@ -9,9 +9,10 @@ let prevValue = ''
 function randomNum() {
   return Math.floor(Math.random() * 20 + 1)
 }
-const gameNumber = randomNum()
+let gameNumber = randomNum()
 
 function startNewGame() {
+  gameNumber = randomNum()
   checkOut.addEventListener('click', checkNumber)
   h2.innerText = '???'
   input.value = ''
