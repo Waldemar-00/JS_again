@@ -45,3 +45,8 @@ function checkNumber() {
 }
 atFirst.addEventListener('click', startNewGame)
 checkOut.addEventListener('click', checkNumber)
+
+if (window.screen.width <= 400) {
+  document.querySelector('h1').innerText = 'Guess!'
+  document.querySelector('header div').innerText = '<From 1 - 20>'
+}
