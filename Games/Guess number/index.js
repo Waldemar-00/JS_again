@@ -12,7 +12,7 @@ function randomNum() {
 let gameNumber = randomNum()
 
 function startNewGame() {
-  gameNumber = randomNum()
+  gameNumber = randomNum() //Git does not see this changing
   checkOut.addEventListener('click', checkNumber)
   h2.innerText = '???'
   input.value = ''
