@@ -9,6 +9,8 @@
 body {
   padding: 2rem;
   position: relative;
+  top: 0;
+  left: 0;
 }
 header {
   display: flex;
@@ -110,6 +112,10 @@ button:hover {
     font-size: 2.2rem;
     width: 10rem;
   }
+  .popup {
+    font-size: 0.8rem;
+    min-width: 5vw;
+  }
 }
 @media (max-width: 600px) {
   header {
@@ -142,19 +148,33 @@ button:hover {
     flex-direction: column;
     align-items: center;
   }
+  .popup {
+    position: absolute;
+    width: 200px;
+    min-height: 10vh;
+    z-index: 20;
+    padding: 0.8rem;
+    line-height: 1rem;
+    font-size: 0.6rem;
+    transform: translate(86%, -7%);
+  }
+  .popup button {
+    font-size: 0.6rem;
+  }
 }
 .popup {
   position: absolute;
   top: 14%;
   left: 0;
-  width: 35vw;
-  height: 10vh;
+  width: 25vw;
+  min-height: 10vh;
   z-index: 20;
   border: 3px solid green;
   padding: 1rem;
   visibility: hidden;
+  line-height: 1.4rem;
 }
-.popup h3 {
+.popup h4 {
   margin-bottom: 1.5rem;
 }
 .popup.view {
