@@ -5,11 +5,17 @@ const input = document.querySelector("[type = 'number']")
 const gameMessage = document.querySelector('#game-message')
 const pointsNumber = document.querySelector('#points span')
 const bestResultNumber = document.querySelector('#best-result span')
+const popup = document.querySelector('.popup')
+const close = document.querySelector('.close')
 let prevValue = ''
+let gameNumber = randomNum()
 function randomNum() {
   return Math.floor(Math.random() * 20 + 1)
 }
-let gameNumber = randomNum()
+function closePopup() {
+  popup.classList.remove('view')
+  close.removeEventListener('click', closePopup)
+}
 
 function startNewGame() {
   gameNumber = randomNum() //Git does not see this changing
@@ -24,7 +30,11 @@ function startNewGame() {
 }
 
 function checkNumber() {
-  if (prevValue == input.value) return
+  if (prevValue == input.value) {
+    popup.classList.add('view')
+    close.addEventListener('click', closePopup)
+    return
+  }
   prevValue = input.value
   if (input.value > gameNumber) {
     gameMessage.innerText = 'Too much!'
