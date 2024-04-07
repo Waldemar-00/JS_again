@@ -13,7 +13,8 @@ function randomNum() {
   return Math.floor(Math.random() * 20 + 1)
 }
 function closePopup() {
-  popup.classList.remove('view')
+  // popup.classList.remove('view')
+  popup.close()
   close.removeEventListener('click', closePopup)
 }
 
@@ -31,7 +32,8 @@ function startNewGame() {
 
 function checkNumber() {
   if (prevValue == input.value) {
-    popup.classList.add('view')
+    // popup.classList.add('view')
+    popup.show()
     close.addEventListener('click', closePopup)
     return
   }
