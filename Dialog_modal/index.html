@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./index.css"
+    />
+  </head>
+  <body>
+    <h1>Meet Modal window like a Form!</h1>
+    <button
+      type="button"
+      class="get"
+    >
+      Get Form like a Modal
+    </button>
+    <dialog class="modal">
+      <button class="close">X</button>
+      <form
+        method="dialog"
+        class="modalForm"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="name"
+        />
+        <input
+          type="text"
+          name="sourname"
+          placeholder="sourname"
+        />
+        <input
+          type="number"
+          name="age"
+          placeholder="age"
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </dialog>
+    <script
+      src="./index.js"
+      type="module"
+    ></script>
+  </body>
+</html>
+<!-- action="https://jsonplaceholder.typicode.com/posts"
+        method="post"
+        enctype="application/x-www-form-urlencoded"
+        autocomplete="on"
+        target="_blank" -->
