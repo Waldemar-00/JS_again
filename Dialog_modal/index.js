@@ -11,5 +11,11 @@ btnGet.addEventListener('click', () => dialog.showModal())
 btnClose.addEventListener('click', () => dialog.close())
 form.addEventListener('submit', (e) => {
   e.preventDefault()
-  console.log({ name: inputName.value, sourname: inputSourname.value, age: inputAge.value })
+  fetch('http://localhost:3000/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: inputName.value, sourname: inputSourname.value, age: inputAge.value }),
+  })
+    .then((response) => response.json())
+    .then((result) => console.log(result))
 })

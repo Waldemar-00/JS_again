@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "9f8a",
+      "name": "JOHN",
+      "sourname": "KONER",
+      "age": "78"
+    },
+    {
+      "id": "3b66",
+      "name": "I AM",
+      "sourname": "wdqdq",
+      "age": "11111"
+    }
+  ],
+  "notes": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
