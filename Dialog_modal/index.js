@@ -9,13 +9,51 @@ const dialog = document.querySelector('.modal')
 
 btnGet.addEventListener('click', () => dialog.showModal())
 btnClose.addEventListener('click', () => dialog.close())
-form.addEventListener('submit', (e) => {
+//! FETCH
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   fetch('http://localhost:3000/users', {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/json' },
+//     body: JSON.stringify({ name: inputName.value, sourname: inputSourname.value, age: inputAge.value }),
+//   })
+//     .then((response) => response.json())
+//     .then((result) => console.log(result))
+// })
+//! AXIOS
+
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault()
+//   axios({
+//     url: 'http://localhost:3000/users',
+//     method: 'POST',
+//     data: { name: inputName.value, sourname: inputSourname.value, age: inputAge.value },
+//   }).then((response) => console.log(response.data))
+// })
+
+//! AXIOS ASYNC AWAIT TRY-CATCH
+async function userDataPost(e) {
   e.preventDefault()
-  fetch('http://localhost:3000/users', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: inputName.value, sourname: inputSourname.value, age: inputAge.value }),
-  })
-    .then((response) => response.json())
-    .then((result) => console.log(result))
-})
+  try {
+    const user = await axios({
+      url: 'http://localhost:3000/users',
+      method: 'POST',
+      timeout: 30000,
+      data: { name: inputName.value, sourname: inputSourname.value, age: inputAge.value },
+    })
+    if (!user.data.name) throw new Error('User must have name!')
+    if (!user.data.sourname) throw new Error('User must have sourname!')
+    if (!user.data.age) throw new Error('User must have age!')
+  } catch (error) {
+    if (
+      error.message !== 'User must have name!' ||
+      error.message !== 'User must have sourname!' ||
+      error.message !== 'User must have age!'
+    )
+      throw error
+    else {
+      console.Error(error.message)
+    }
+  }
+}
+form.addEventListener('submit', (e) => userDataPost(e))
