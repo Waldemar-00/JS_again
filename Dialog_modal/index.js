@@ -40,7 +40,7 @@ async function userDataPost(e) {
   e.preventDefault()
   try {
     const user = await axios({
-      url: 'http://localhost:3000/users',
+      url: 'http://localhost:3000/user',
       method: 'POST',
       timeout: 30000,
       data: { name: inputName.value, sourname: inputSourname.value, age: inputAge.value },
@@ -50,13 +50,17 @@ async function userDataPost(e) {
     if (!user.data.age) throw new Error('User must have age!')
   } catch (error) {
     if (
-      error.message !== 'User must have name!' ||
-      error.message !== 'User must have sourname!' ||
-      error.message !== 'User must have age!'
+      error.message === 'User must have name!' ||
+      error.message === 'User must have sourname!' ||
+      error.message === 'User must have age!'
     )
+      console.error(error.message)
+    else if (error.response) {
+      console.error(error.response.data, error.response)
+    } else if (error.request) {
+      console.error(error.request)
+    } else {
       throw error
-    else {
-      console.Error(error.message)
     }
   }
 }
