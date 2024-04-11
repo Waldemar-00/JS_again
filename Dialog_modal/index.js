@@ -32,6 +32,10 @@ btnClose.addEventListener('click', () => dialog.close())
 // })
 
 //! AXIOS ASYNC AWAIT TRY-CATCH
+axios.interceptors.request.use((config) => {
+  alert('Request has sent!')
+  return config
+})
 async function userDataPost(e) {
   e.preventDefault()
   try {
