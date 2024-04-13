@@ -32,22 +32,31 @@ btnClose.addEventListener('click', () => dialog.close())
 // })
 
 //! AXIOS ASYNC AWAIT TRY-CATCH
-axios.interceptors.request.use((config) => {
-  alert('Request has sent!')
-  return config
+axios.interceptors.request.use((request) => {
+  request.meta = request.meta || {}
+  request.meta.requestStart = new Date().getTime()
+  console.log(request.meta.requestStart)
+  return request
 })
 async function userDataPost(e) {
   e.preventDefault()
+  return await axios({
+    url: 'http://localhost:3000/users',
+    method: 'POST',
+    timeout: 30000,
+    data: { name: inputName.value, sourname: inputSourname.value, age: inputAge.value },
+  })
+}
+form.addEventListener('submit', (e) => userDataPost(e))
+axios.interceptors.response.use((response) => {
   try {
-    const user = await axios({
-      url: 'http://localhost:3000/user',
-      method: 'POST',
-      timeout: 30000,
-      data: { name: inputName.value, sourname: inputSourname.value, age: inputAge.value },
-    })
-    if (!user.data.name) throw new Error('User must have name!')
-    if (!user.data.sourname) throw new Error('User must have sourname!')
-    if (!user.data.age) throw new Error('User must have age!')
+    response.config.meta.requestEnd = new Date().getTime()
+    console.log(response.config.meta.requestEnd)
+    response.config.meta.requestTime = response.config.meta.requestEnd - response.config.meta.requestStart
+    console.log(response.config.meta.requestTime)
+    if (!response.data.name) throw new Error('User must have name!')
+    if (!response.data.sourname) throw new Error('User must have sourname!')
+    if (!response.data.age) throw new Error('User must have age!')
   } catch (error) {
     if (
       error.message === 'User must have name!' ||
@@ -63,5 +72,4 @@ async function userDataPost(e) {
       throw error
     }
   }
-}
-form.addEventListener('submit', (e) => userDataPost(e))
+})
