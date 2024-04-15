@@ -9,6 +9,9 @@ const dialog = document.querySelector('.modal')
 
 btnGet.addEventListener('click', () => dialog.showModal())
 btnClose.addEventListener('click', () => dialog.close())
+dialog.addEventListener('click', (e) => {
+  if (e.target.hasAttribute('open')) dialog.close()
+})
 //! FETCH
 // form.addEventListener('submit', (e) => {
 //   e.preventDefault()
