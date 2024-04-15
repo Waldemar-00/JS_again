@@ -47,7 +47,7 @@ async function userDataPost(e) {
     return await axios({
       url: 'http://localhost:3000/users',
       method: 'POST',
-      signal: AbortSignal.timeout(0),
+      signal: AbortSignal.timeout(17000),
       //! AbortSignal.timeout
       data: { name: inputName.value, sourname: inputSourname.value, age: inputAge.value },
     })
