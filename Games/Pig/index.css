@@ -65,7 +65,7 @@ body {
 }
 .game {
   position: absolute;
-  top: 0;
+  top: -9vh;
   left: 50vw;
   z-index: 20;
   transform: translate(-50%, 20%);
@@ -73,31 +73,67 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 10vw;
   height: 70vh;
 }
+h1 {
+  font-size: 7rem;
+  cursor: pointer;
+}
+h1:hover::after {
+  position: absolute;
+  content: 'New Game';
+  color: white;
+  font-style: italic;
+  font-size: 1rem;
+  white-space: nowrap;
+  top: 0.7rem;
+  left: 7rem;
+}
+button {
+  border-radius: 7px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+/* .newGame {
+  width: 100%;
+  color: orangered;
+  font-weight: bold;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+} */
+/* .throwCube {
+  font-weight: bold;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  color: rgb(235, 30, 235);
+  line-height: 2rem;
+  width: 80%;
+} */
 .cube {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 5vw;
-  height: 5vw;
+  width: 7vw;
+  height: 7vw;
   border-radius: 7px;
   background-color: #fff;
+  cursor: pointer;
 }
 .doted {
   position: relative;
   background-color: black;
-  width: 0.8vw;
-  height: 0.8vw;
-  margin: 0.3rem;
+  width: 1.1vw;
+  height: 1.1vw;
+  margin: 0.4rem;
   border-radius: 50%;
 }
 .doted_1 {
-  right: -vw;
+  right: -7vw;
   top: 0;
 }
 .hidden {
@@ -106,14 +142,11 @@ body {
 
 .save {
   font-size: 1.2rem;
-  padding: 0.3rem;
+  padding: 0.5rem;
   text-align: left;
-  width: 100%;
   text-align: center;
   vertical-align: middle;
-  line-height: 1.2rem;
-  border-radius: 7px;
-  border: none;
+  line-height: 1.3rem;
 }
 .save span {
   color: rgba(255, 166, 0.7);
